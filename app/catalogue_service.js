@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+//eslint-disable-next-line no-unused-vars
 const catalogue = [
   "The Catcher in the Rye by J.D. Salinger",
   "Dracula by Bram Stoker",
@@ -23,23 +23,43 @@ const catalogue = [
 ];
 
 function countBooks() {
-  // Your code here
-}
+  return catalogue.length
+};
 
 function checkBook(book) {
-  // Your code here
-}
+  for (i = 0; i < catalogue.length; i++){
+    if (catalogue[i] === book){
+      return true
+    } 
+  } return false
+};
+
 
 function countBooksByFirstLetter(letter) {
-  // Your code here
+  let count = 0;
+  for (i = 0; i < catalogue.length; i++) {
+    if (catalogue[i].charAt(0) === letter) {
+      count++
+    } 
+  } return count
 }
 
 function countBooksByKeyword(keyword) {
-  // Your code here
-}
+  let count = 0; 
+  for (i = 0; i < catalogue.length; i++){
+    if(catalogue[i].toLowerCase().includes(keyword)) {
+      count++
+    };
+  } return count
+};
 
 function getBooksByAuthor(author) {
-  // Your code here
+  let listofBooks = []
+    for (i = 0; i < catalogue.length; i++) {
+      if (catalogue[i].toLowerCase().includes(author.toLowerCase())) {
+        listofBooks.push(catalogue[i])
+      }
+    } return listofBooks
 }
 
 module.exports = {
